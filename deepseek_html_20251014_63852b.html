@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JohnOye's Travel - Professional Visa Processing Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* All the CSS styles from the previous code */
+        :root {
+            --primary: #1a73e8;
+            --primary-dark: #0d47a1;
+            --secondary: #f8f9fa;
+            --accent: #ff6d00;
+            --text: #333;
+            --light-text: #666;
+            --border: #e0e0e0;
+            --success: #4caf50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            background-color: #f5f7fa;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+        }
+        
+        .btn-accent:hover {
+            background-color: #e65100;
+        }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--light-text);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-image {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .company-tagline {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            font-style: italic;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 30px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--secondary);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            background-color: #ddd;
+            height: 300px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-text);
+        }
+        
+        .parent-company {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Process Section */
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        .step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            right: -10px;
+            width: 100%;
+            height: 2px;
+            background-color: var(--border);
+            z-index: -1;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        /* Countries Section */
+        .countries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .country-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .country-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .country-flag {
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .country-info {
+            padding: 20px;
+        }
+        
+        .country-info h3 {
+            margin-bottom: 10px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--secondary);
+        }
+        
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+        
+        .client-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        
+        .client-name {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        
+        /* Application Form */
+        .application-form {
+            background-color: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        /* Contact Info */
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-item i {
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        /* Logo Section */
+        .logo-section {
+            background-color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .main-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .main-logo-image {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .main-logo-text {
+            text-align: left;
+        }
+        
+        .main-logo-text h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .main-logo-text p {
+            color: var(--light-text);
+            font-size: 1rem;
+        }
+        
+        /* OFNO RAVEN Logo Styling */
+        .ofno-raven-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: bold;
+            line-height: 1;
+        }
+        
+        .ofno {
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+        
+        .raven {
+            font-size: 1.5rem;
+            margin-top: 2px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .step:not(:last-child)::after {
+                display: none;
+            }
+            
+            .process-steps {
+                gap: 30px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu li {
+                margin: 10px 0;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+            
+            .logo {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-image">
+                    <div class="ofno-raven-logo">
+                        <div class="ofno">OFNO</div>
+                        <div class="raven">RAVEN</div>
+                    </div>
+                </div>
+                <div class="logo-text">
+                    <h1>JohnOye's Travel</h1>
+                    <div class="company-tagline">A subsidiary of Johnmich Resource Services</div>
+                </div>
+            </div>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#countries">Countries</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#application" class="btn">Apply Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Logo Section -->
+    <section class="logo-section">
+        <div class="container">
+            <div class="logo-container">
+                <div class="main-logo">
+                    <div class="main-logo-image">
+                        <div class="ofno-raven-logo">
+                            <div class="ofno">OFNO</div>
+                            <div class="raven">RAVEN</div>
+                        </div>
+                    </div>
+                    <div class="main-logo-text">
+                        <h2>JohnOye's Travel</h2>
+                        <p>Powered by OFNO RAVEN | A subsidiary of Johnmich Resource Services</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h2>Your Gateway to the World</h2>
+            <p>JohnOye's Travel, a subsidiary of Johnmich Resource Services, offers professional visa processing and immigration services for any country. We provide easy and seamless solutions in all areas of travel.</p>
+            <div class="hero-buttons">
+                <a href="#application" class="btn btn-accent">Start Your Application</a>
+                <a href="https://wa.me/2348063483975" class="btn btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Durba Link Road, Lagos, Nigeria</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>0806 348 3975</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About JohnOye's Travel</h2>
+                <p>Your trusted partner for immigration and travel solutions</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Simplifying Global Travel and Immigration</h3>
+                    <p>JohnOye's Travel, powered by OFNO RAVEN, is a subsidiary of Johnmich Resource Services, created to offer comprehensive immigration and travel services for any country. We provide easy and seamless solutions in all areas of travel, making international mobility accessible to everyone.</p>
+                    <p>With our expertise and connections, we simplify the complex process of visa applications, immigration procedures, and international travel arrangements. Our team is dedicated to ensuring your journey is smooth from start to finish.</p>
+                    <div class="parent-company">
+                        <h4>Part of Johnmich Resource Services</h4>
+                        <p>As a subsidiary of Johnmich Resource Services, we leverage extensive resources and industry expertise to deliver exceptional travel and immigration services. Our parent company's reputation for excellence ensures we maintain the highest standards in all our operations.</p>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <i class="fas fa-globe-americas" style="font-size: 4rem;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Comprehensive travel and immigration solutions for any country</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3>Tourist Visas</h3>
+                    <p>Complete processing for tourist visas to destinations worldwide. We handle documentation, appointments, and follow-ups.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Business Visas</h3>
+                    <p>Efficient business visa processing with expedited options for corporate clients and frequent travelers.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Student Visas</h3>
+                    <p>Specialized assistance for student visa applications, including documentation guidance and interview preparation.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Family Visas</h3>
+                    <p>Comprehensive family visa services for reuniting with loved ones across international borders.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Immigration Services</h3>
+                    <p>Expert guidance on permanent residency, citizenship, and other immigration processes for any country.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h3>Travel Arrangements</h3>
+                    <p>Complete travel solutions including flight bookings, hotel reservations, and travel insurance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" style="background-color: white;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Process</h2>
+                <p>Simple, transparent, and efficient visa application process</p>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Consultation</h3>
+                    <p>Initial assessment of your requirements and documentation</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Documentation</h3>
+                    <p>We help prepare and verify all required documents</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Application</h3>
+                    <p>Submission of your application with all supporting documents</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Follow-up</h3>
+                    <p>Tracking your application status and timely updates</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Visa Delivery</h3>
+                    <p>Secure delivery of your approved visa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countries Section -->
+    <section id="countries">
+        <div class="container">
+            <div class="section-title">
+                <h2>Popular Destinations</h2>
+                <p>We process visas for countries across the globe</p>
+            </div>
+            <div class="countries-grid">
+                <div class="country-card">
+                    <div class="country-flag" style="background-color: #0039a6;"></div>
+                    <div class="country-info">
+                        <h3>United States</h3>
+                        <p>Tourist, Business, Student Visas</p>
+                        <p>Processing Time: 10-15 days</p>
+                    </div>
+                </div>
+                <div class="country-card">
+                    <div class="country-flag" style="background-color: #00247d;"></div>
+                    <div class="country-info">
+                        <h3>United Kingdom</h3>
+                        <p>Tourist, Business, Student Visas</p>
+                        <p>Processing Time: 7-12 days</p>
+                    </div>
+                </div>
+                <div class="country-card">
+                    <div class="country-flag" style="background-color: #ce1126;"></div>
+                    <div class="country-info">
+                        <h3>Canada</h3>
+                        <p>Tourist, Business, Student Visas</p>
+                        <p>Processing Time: 8-14 days</p>
+                    </div>
+                </div>
+                <div class="country-card">
+                    <div class="country-flag" style="background-color: #ffce00;"></div>
+                    <div class="country-info">
+                        <h3>Germany</h3>
+                        <p>Tourist, Business, Student Visas</p>
+                        <p>Processing Time: 5-10 days</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+                <p>What our clients say about our services</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <div class="client-img">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <p>"JohnOye's Travel made my student visa process so smooth. Their guidance on documentation and interview preparation was invaluable. I got my visa in just 10 days!"</p>
+                    <div class="client-name">- Sarah Johnson</div>
+                    <div class="client-location">Student Visa to USA</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form Section -->
+    <section id="application">
+        <div class="container">
+            <div class="section-title">
+                <h2>Start Your Visa Application</h2>
+                <p>Fill out the form below and our team will contact you within 24 hours</p>
+            </div>
+            <form class="application-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" class="form-control" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="destination">Destination Country</label>
+                        <select id="destination" class="form-control" required>
+                            <option value="">Select a country</option>
+                            <option value="usa">United States</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="canada">Canada</option>
+                            <option value="germany">Germany</option>
+                            <option value="australia">Australia</option>
+                            <option value="france">France</option>
+                            <option value="other">Other Country</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="visaType">Visa Type</label>
+                        <select id="visaType" class="form-control" required>
+                            <option value="">Select visa type</option>
+                            <option value="tourist">Tourist Visa</option>
+                            <option value="business">Business Visa</option>
+                            <option value="student">Student Visa</option>
+                            <option value="family">Family Visa</option>
+                            <option value="immigration">Immigration Services</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Information</label>
+                    <textarea id="message" class="form-control" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn">Submit Application</button>
+            </form>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Durba Link Road, Lagos, Nigeria</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <span><a href="https://wa.me/2348063483975" style="color: var(--text); text-decoration: none;">0806 348 3975</a></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>JohnOye's Travel</h3>
+                    <p>A subsidiary of Johnmich Resource Services, offering comprehensive immigration and travel services for any country with easy and seamless solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/2348063483975" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#process">Process</a></li>
+                        <li><a href="#countries">Countries</a></li>
+                        <li><a href="#application">Apply Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Tourist Visas</a></li>
+                        <li><a href="#">Business Visas</a></li>
+                        <li><a href="#">Student Visas</a></li>
+                        <li><a href="#">Family Visas</a></li>
+                        <li><a href="#">Immigration Services</a></li>
+                        <li><a href="#">Travel Arrangements</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Durba Link Road, Lagos, Nigeria</li>
+                        <li><i class="fas fa-phone"></i> 0806 348 3975</li>
+                        <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/2348063483975" style="color: #ccc;">WhatsApp: 0806 348 3975</a></li>
+                        <li><i class="fas fa-envelope"></i> info@johnoyetravel.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 JohnOye's Travel - Powered by OFNO RAVEN | A subsidiary of Johnmich Resource Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+        
+        // Form submission
+        document.querySelector('.application-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your application! Our team will contact you within 24 hours.');
+            this.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('.nav-menu').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
